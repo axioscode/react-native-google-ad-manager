@@ -1,6 +1,6 @@
 {
   "name": "@axioscode/react-native-google-ad-manager",
-  "version": "2.1.0-rc.9",
+  "version": "2.1.0-rc.11",
   "description": "Google Ad Manager for react-native",
   "main": "index.js",
   "scripts": {

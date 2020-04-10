@@ -38,6 +38,7 @@ import org.prebid.mobile.addendum.AdViewUtils;
 import org.prebid.mobile.addendum.PbFindSizeError;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -346,7 +347,7 @@ class BannerView extends ReactViewGroup {
 
             for (Map.Entry<String, Object> entry : targeting.entrySet()) {
                 String key = entry.getKey();
-                ArrayList value =  (ArrayList) entry.getValue();
+                String value = (String) entry.getValue();
 
                 adRequestBuilder.addCustomTargeting(key, value);
             }
@@ -511,6 +512,10 @@ public class BannerViewManager extends ViewGroupManager<BannerView> {
                         MapBuilder.of(
                                 "phasedRegistrationNames",
                                 MapBuilder.of("bubbled", "onAdFailedToLoad")))
+                .put(BannerView.NATIVE_ERROR,
+                        MapBuilder.of(
+                                "phasedRegistrationNames",
+                                MapBuilder.of("bubbled", "onNativeError")))
                 .put(BannerView.AD_LOADED,
                         MapBuilder.of(
                                 "phasedRegistrationNames",
